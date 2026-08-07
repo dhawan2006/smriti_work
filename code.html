@@ -26,6 +26,16 @@
       }
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
     ::-webkit-scrollbar {
       display: none;
     }
@@ -75,9 +85,9 @@
     <!-- Cream Background (Philosophy State) -->
     <div id="nav-bg-light" class="absolute inset-0 bg-[#F4F0E6] border-b border-[#211E19]/[0.08] transition-opacity duration-300 ease-in-out opacity-0"></div>
 
-    <div class="relative flex items-center justify-between h-[70px] px-[54px] pointer-events-auto">
+    <div class="relative flex items-center justify-between h-[64px] lg:h-[70px] px-[20px] lg:px-[54px] pointer-events-auto">
       <div class="flex items-center flex-1">
-        <a class="relative block w-[135px] md:w-[160px] lg:w-[185px]" href="#">
+        <a class="relative block w-[125px] lg:w-[185px]" href="#">
           <!-- Hero Logo (Wordmark) -->
           <img id="logo-wordmark" src="./images/logo_5@2x.png" alt="Kintsugi" class="block w-full h-auto object-contain transition-opacity duration-300 ease-in-out opacity-100" />
           <!-- Philosophy Logo (Symbol) -->
@@ -85,56 +95,66 @@
         </a>
       </div>
 
-      <nav class="flex items-center flex-none gap-12">
+      <nav class="hidden lg:flex items-center flex-none gap-12">
         <a class="nav-link font-sans text-[12px] font-normal leading-[16px] tracking-[0.15em] text-white/85 uppercase transition-colors duration-300 hover:text-white"
-          href="#">Philosophy</a>
+          href="#philosophy">Philosophy</a>
         <a class="nav-link font-sans text-[12px] font-normal leading-[16px] tracking-[0.15em] text-white/85 uppercase transition-colors duration-300 hover:text-white"
           href="#">The Maker</a>
       </nav>
 
-      <div class="flex items-center justify-end flex-1">
+      <div class="hidden lg:flex items-center justify-end flex-1">
         <a id="cta-link" class="pb-1 font-sans text-[12px] font-normal leading-[16px] tracking-[0.15em] text-white/85 uppercase transition-colors duration-300 border-b border-white/50 hover:border-white/90"
           href="#">Begin a Project</a>
+      </div>
+
+      <!-- Mobile Menu Trigger -->
+      <div class="flex lg:hidden items-center justify-end flex-1">
+        <button id="mobile-menu-btn" class="flex flex-col justify-center items-end gap-[5px] w-11 h-11" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="w-[24px] h-[1px] bg-white transition-colors duration-300 menu-line"></span>
+          <span class="w-[24px] h-[1px] bg-white transition-colors duration-300 menu-line"></span>
+        </button>
       </div>
     </div>
   </header>
 
   <main class="w-full">
-    <div class="relative flex flex-col w-full min-h-screen -mt-[70px]">
+    <div class="relative flex flex-col w-full min-h-[100svh] lg:min-h-screen -mt-[70px]">
 
       <!-- Hero Background -->
-      <div class="absolute inset-0 z-0 bg-center bg-cover" role="img"
+      <div class="absolute inset-0 z-0 bg-[58%_center] lg:bg-center bg-cover" role="img"
         aria-label="A living room featuring a wooden sofa with colorful cushions, a vibrant floral arrangement in a green vase on a wooden coffee table, and a large traditional Indian painting on the wall above the sofa."
         style="background-image: url('./images/hero.jpg');">
         <!-- Hero Overlays -->
         <div class="absolute inset-0 bg-black/25"></div>
         <div class="absolute inset-0 bg-gradient-to-r from-[#0a0805]/60 via-[#0a0805]/20 to-transparent"></div>
         <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
+        <!-- Mobile Specific localized text darkening -->
+        <div class="absolute inset-0 bg-gradient-to-tr from-[#0a0805]/80 via-transparent to-transparent lg:hidden"></div>
       </div>
 
       <!-- Hero Content -->
       <div
-        class="relative z-10 flex flex-col justify-end flex-1 pt-[70px] pb-32 px-margin-mobile md:pb-24 md:px-[54px]">
-        <div class="w-full md:max-w-[1000px]">
+        class="relative z-10 flex flex-col justify-end flex-1 pt-[70px] pb-[100px] lg:pb-32 px-[20px] lg:px-[54px]">
+        <div class="w-full lg:max-w-[1000px]">
           <!-- Eyebrow -->
-          <p class="mb-6 font-sans text-[12px] font-normal leading-[16px] tracking-[0.2em] text-white/90 uppercase">
+          <p class="mb-4 lg:mb-6 font-sans text-[10px] lg:text-[12px] font-normal leading-[15px] lg:leading-[16px] tracking-[0.16em] lg:tracking-[0.2em] text-white/90 uppercase">
             Designing Spaces · Mumbai and Beyond
           </p>
 
           <!-- Headline -->
-          <h1 class="flex flex-col mb-12">
+          <h1 class="flex flex-col mb-8 lg:mb-12">
             <span
-              class="font-serif text-[56px] font-normal leading-[1.1] tracking-tight text-white md:text-[80px] md:leading-[86px]">
+              class="font-serif text-[clamp(43px,12vw,70px)] lg:text-[80px] font-normal leading-[1.0] lg:leading-[86px] tracking-tight text-white pr-8 lg:pr-0">
               Where your stories find a
             </span>
             <span
-              class="font-serif text-[80px] font-normal italic leading-[0.9] text-primary-fixed-dim -ml-2 md:text-[108px] md:leading-[0.88]">
+              class="font-serif text-[clamp(60px,18vw,82px)] lg:text-[108px] font-normal italic leading-[0.9] lg:leading-[0.88] text-primary-fixed-dim -ml-1 lg:-ml-2 mt-1 lg:mt-0">
               home.
             </span>
           </h1>
 
           <!-- Supporting Copy -->
-          <p class="font-sans text-[18px] font-normal leading-[28px] tracking-[0.01em] text-white/85 max-w-[450px]">
+          <p class="font-sans text-[15.5px] lg:text-[18px] font-normal leading-[1.55] lg:leading-[28px] tracking-[0.01em] text-white/85 max-w-[340px] lg:max-w-[450px]">
             Every home holds a collection of stories, memories and moments. We bring them together, to create spaces
             that feel deeply, unmistakably yours.
           </p>
@@ -142,11 +162,11 @@
       </div>
 
       <!-- Scroll Indicator -->
-      <div class="absolute z-10 bottom-16 right-margin-mobile md:right-[52px]">
-        <a class="flex items-center justify-center w-16 h-16 transition-colors duration-300 border rounded-full border-white/60 hover:border-white group"
+      <div class="absolute z-10 bottom-6 lg:bottom-16 right-[20px] lg:right-[52px]">
+        <a class="flex items-center justify-center w-[48px] h-[48px] lg:w-16 lg:h-16 transition-colors duration-300 border rounded-full border-white/60 hover:border-white group"
           href="#philosophy">
           <span
-            class="material-symbols-outlined text-[24px] font-light text-white transition-transform duration-300 group-hover:translate-y-1"
+            class="material-symbols-outlined text-[20px] lg:text-[24px] font-light text-white transition-transform duration-300 group-hover:translate-y-1"
             style="font-variation-settings: 'wght' 200;">
             arrow_downward
           </span>
@@ -156,31 +176,31 @@
     </div>
 
     <!-- Philosophy Section -->
-    <section id="philosophy" class="w-full bg-[#F4F0E6] px-6 md:px-[54px] pt-24 md:pt-[190px] pb-32 md:pb-[220px] min-h-screen md:min-h-[100vh] lg:min-h-[850px] flex flex-col md:flex-row">
+    <section id="philosophy" class="scroll-mt-[64px] lg:scroll-mt-[70px] w-full bg-[#F4F0E6] px-[20px] lg:px-[54px] pt-[125px] lg:pt-[190px] pb-[115px] lg:pb-[220px] min-h-screen lg:min-h-[850px] flex flex-col lg:flex-row">
       
       <!-- Left Column (Label & Line) -->
-      <div class="w-full md:w-[36%] flex flex-col shrink-0 mb-16 md:mb-0">
-        <p class="font-sans text-[12px] font-normal uppercase tracking-[0.18em] text-[#211E19]/55">
+      <div class="w-full lg:w-[36%] flex flex-col shrink-0 mb-12 lg:mb-0">
+        <p class="font-sans text-[10.5px] lg:text-[12px] font-normal uppercase tracking-[0.16em] lg:tracking-[0.18em] text-[#211E19]/55">
           01 — OUR PHILOSOPHY
         </p>
-        <div class="w-[110px] h-[1px] bg-[#A77A32] mt-6 md:mt-[50px]"></div>
+        <div class="w-[70px] lg:w-[110px] h-[1px] bg-[#A77A32] mt-6 lg:mt-[50px]"></div>
       </div>
 
       <!-- Right Column (Main Content) -->
-      <div class="w-full md:w-[64%] flex flex-col md:-mt-2">
+      <div class="w-full lg:w-[64%] flex flex-col lg:-mt-2">
         
         <!-- Editorial Statement -->
-        <h2 class="font-serif text-[42px] md:text-[64px] lg:text-[80px] font-normal leading-[1.0] tracking-[-0.025em] text-[#211E19]">
-          A home is not a blank<br class="hidden md:block" />
-          canvas. It is a story, already<br class="hidden md:block" />
+        <h2 class="font-serif text-[clamp(38px,11vw,64px)] lg:text-[80px] font-normal leading-[1.05] lg:leading-[1.0] tracking-[-0.025em] text-[#211E19]">
+          A home is not a blank<br class="hidden lg:block" />
+          canvas. It is a story, already<br class="hidden lg:block" />
           in progress.
         </h2>
         
         <!-- Body Copy Columns -->
-        <div class="flex flex-col xl:flex-row gap-10 xl:gap-[65px] mt-12 md:mt-[70px]">
+        <div class="flex flex-col lg:flex-row gap-7 lg:gap-[65px] mt-10 lg:mt-[70px]">
           <!-- Column 1 -->
-          <div class="w-full xl:max-w-[450px]">
-            <p class="font-sans text-[17px] lg:text-[18px] font-normal leading-[1.65] text-[#2A2722]">
+          <div class="w-full lg:max-w-[450px]">
+            <p class="font-sans text-[16px] lg:text-[18px] font-normal leading-[1.65] text-[#2A2722]">
               Kintsugi is the Japanese art of repairing what is broken
               with gold—not disguising its history, but honouring it.
               We bring the same sensitivity to every home.
@@ -188,8 +208,8 @@
           </div>
 
           <!-- Column 2 -->
-          <div class="w-full xl:max-w-[450px]">
-            <p class="font-sans text-[17px] lg:text-[18px] font-normal leading-[1.65] text-[#2A2722]">
+          <div class="w-full lg:max-w-[450px]">
+            <p class="font-sans text-[16px] lg:text-[18px] font-normal leading-[1.65] text-[#2A2722]">
               We listen for what is absent: warmth, rhythm, a place to
               gather. Then we add it back with intention, using honest
               materials and details that feel inevitable.
@@ -202,6 +222,38 @@
 
   </main>
 
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu" class="fixed inset-0 z-[100] bg-[#F4F0E6] flex flex-col pointer-events-none opacity-0 transition-opacity duration-300 ease-in-out" aria-hidden="true">
+    <!-- Menu Header -->
+    <div class="flex items-center justify-between h-[64px] px-[20px]">
+      <a class="block w-[125px]" href="#" id="menu-logo-link">
+        <img src="./images/logo@2x.png" alt="Kintsugi" class="block w-full h-auto object-contain" />
+      </a>
+      <button id="mobile-menu-close" class="flex items-center justify-center w-11 h-11" aria-label="Close menu">
+        <div class="relative w-[24px] h-[24px]">
+          <span class="absolute top-1/2 left-0 w-full h-[1px] bg-[#211E19] rotate-45 -translate-y-1/2"></span>
+          <span class="absolute top-1/2 left-0 w-full h-[1px] bg-[#211E19] -rotate-45 -translate-y-1/2"></span>
+        </div>
+      </button>
+    </div>
+
+    <!-- Menu Links -->
+    <nav class="flex flex-col flex-1 px-[24px] pt-16">
+      <a href="#philosophy" class="flex items-baseline py-6 border-b border-[#211E19]/10 menu-link">
+        <span class="font-sans text-[11px] font-normal tracking-[0.2em] text-[#211E19]/60 mr-8">01</span>
+        <span class="font-serif text-[32px] text-[#211E19] uppercase tracking-tight">Philosophy</span>
+      </a>
+      <a href="#" class="flex items-baseline py-6 border-b border-[#211E19]/10 menu-link">
+        <span class="font-sans text-[11px] font-normal tracking-[0.2em] text-[#211E19]/60 mr-8">02</span>
+        <span class="font-serif text-[32px] text-[#211E19] uppercase tracking-tight">The Maker</span>
+      </a>
+      <a href="#" class="flex items-baseline py-6 border-b border-[#211E19]/10 menu-link">
+        <span class="font-sans text-[11px] font-normal tracking-[0.2em] text-[#211E19]/60 mr-8">03</span>
+        <span class="font-serif text-[32px] text-[#211E19] uppercase tracking-tight">Begin a Project</span>
+      </a>
+    </nav>
+  </div>
+
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const bgHero = document.getElementById('nav-bg-hero');
@@ -211,6 +263,10 @@
       const navLinks = document.querySelectorAll('.nav-link');
       const ctaLink = document.getElementById('cta-link');
       const philosophySection = document.getElementById('philosophy');
+      const menuLines = document.querySelectorAll('.menu-line');
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenuClose = document.getElementById('mobile-menu-close');
+      const mobileMenu = document.getElementById('mobile-menu');
       
       if (!bgHero || !philosophySection) return;
 
@@ -241,6 +297,11 @@
           ctaLink.classList.remove('text-white/85', 'border-white/50', 'hover:border-white/90');
           ctaLink.classList.add('text-[#211E19]/80', 'border-[#A77A32]', 'hover:border-[#A77A32]/70');
           
+          // Update Mobile Menu Trigger
+          menuLines.forEach(line => {
+            line.classList.replace('bg-white', 'bg-[#211E19]');
+          });
+          
         } else if (window.scrollY < triggerPoint && isLightState) {
           isLightState = false;
           
@@ -261,6 +322,11 @@
           // Update CTA
           ctaLink.classList.add('text-white/85', 'border-white/50', 'hover:border-white/90');
           ctaLink.classList.remove('text-[#211E19]/80', 'border-[#A77A32]', 'hover:border-[#A77A32]/70');
+
+          // Update Mobile Menu Trigger
+          menuLines.forEach(line => {
+            line.classList.replace('bg-[#211E19]', 'bg-white');
+          });
         }
       };
 
@@ -270,6 +336,42 @@
       
       // Initial check on load
       updateNavbar();
+
+      // Mobile Menu Logic
+      const openMenu = () => {
+        if (!mobileMenu) return;
+        mobileMenu.classList.replace('opacity-0', 'opacity-100');
+        mobileMenu.classList.replace('pointer-events-none', 'pointer-events-auto');
+        mobileMenu.setAttribute('aria-hidden', 'false');
+        if (mobileMenuBtn) mobileMenuBtn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      };
+
+      const closeMenu = () => {
+        if (!mobileMenu) return;
+        mobileMenu.classList.replace('opacity-100', 'opacity-0');
+        mobileMenu.classList.replace('pointer-events-auto', 'pointer-events-none');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        if (mobileMenuBtn) mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      };
+
+      if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openMenu);
+      if (mobileMenuClose) mobileMenuClose.addEventListener('click', closeMenu);
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileMenuBtn?.getAttribute('aria-expanded') === 'true') {
+          closeMenu();
+        }
+      });
+      
+      // Close menu when clicking a link inside it
+      const mobileLinks = mobileMenu?.querySelectorAll('.menu-link');
+      if (mobileLinks) {
+        mobileLinks.forEach(link => {
+          link.addEventListener('click', closeMenu);
+        });
+      }
     });
   </script>
 </body>
