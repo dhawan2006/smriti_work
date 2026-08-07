@@ -1,0 +1,277 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+  <style>
+    @layer base {
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      main> :first-child {
+        margin-top: 0 !important;
+      }
+
+      main> :last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            surface: "#fff8f1",
+            "on-surface": "#1e1b15",
+            primary: "#7a550b",
+            "primary-fixed-dim": "#f1be6d",
+            "outline-variant": "#d3c4b3",
+            "on-surface-variant": "#4f4538",
+          },
+          spacing: {
+            "container-max": "1440px",
+            "section-gap": "160px",
+            "margin-mobile": "24px",
+            "margin-desktop": "80px",
+          },
+          fontFamily: {
+            sans: ["Hanken Grotesk", "sans-serif"],
+            serif: ["Bodoni Moda", "serif"],
+          },
+        },
+      },
+    };
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@100..900&family=Hanken+Grotesk:wght@100..900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body class="bg-surface font-sans text-on-surface">
+  <!-- Navbar -->
+  <header id="navbar" class="fixed top-0 z-50 w-full pointer-events-none">
+    <!-- Dark Gradient Background (Hero State) -->
+    <div id="nav-bg-hero" class="absolute inset-0 bg-gradient-to-b from-[#080705]/50 to-transparent transition-opacity duration-300 ease-in-out opacity-100"></div>
+    
+    <!-- Cream Background (Philosophy State) -->
+    <div id="nav-bg-light" class="absolute inset-0 bg-[#F4F0E6] border-b border-[#211E19]/[0.08] transition-opacity duration-300 ease-in-out opacity-0"></div>
+
+    <div class="relative flex items-center justify-between h-[70px] px-[54px] pointer-events-auto">
+      <div class="flex items-center flex-1">
+        <a class="relative block w-[135px] md:w-[160px] lg:w-[185px]" href="#">
+          <!-- Hero Logo (Wordmark) -->
+          <img id="logo-wordmark" src="./images/logo_5@2x.png" alt="Kintsugi" class="block w-full h-auto object-contain transition-opacity duration-300 ease-in-out opacity-100" />
+          <!-- Philosophy Logo (Symbol) -->
+          <img id="logo-symbol" src="./images/logo@2x.png" alt="Kintsugi Symbol" class="absolute left-0 top-0 w-full h-auto object-contain transition-opacity duration-300 ease-in-out opacity-0" />
+        </a>
+      </div>
+
+      <nav class="flex items-center flex-none gap-12">
+        <a class="nav-link font-sans text-[12px] font-normal leading-[16px] tracking-[0.15em] text-white/85 uppercase transition-colors duration-300 hover:text-white"
+          href="#">Philosophy</a>
+        <a class="nav-link font-sans text-[12px] font-normal leading-[16px] tracking-[0.15em] text-white/85 uppercase transition-colors duration-300 hover:text-white"
+          href="#">The Maker</a>
+      </nav>
+
+      <div class="flex items-center justify-end flex-1">
+        <a id="cta-link" class="pb-1 font-sans text-[12px] font-normal leading-[16px] tracking-[0.15em] text-white/85 uppercase transition-colors duration-300 border-b border-white/50 hover:border-white/90"
+          href="#">Begin a Project</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="w-full">
+    <div class="relative flex flex-col w-full min-h-screen -mt-[70px]">
+
+      <!-- Hero Background -->
+      <div class="absolute inset-0 z-0 bg-center bg-cover" role="img"
+        aria-label="A living room featuring a wooden sofa with colorful cushions, a vibrant floral arrangement in a green vase on a wooden coffee table, and a large traditional Indian painting on the wall above the sofa."
+        style="background-image: url('./images/hero.jpg');">
+        <!-- Hero Overlays -->
+        <div class="absolute inset-0 bg-black/25"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#0a0805]/60 via-[#0a0805]/20 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
+      </div>
+
+      <!-- Hero Content -->
+      <div
+        class="relative z-10 flex flex-col justify-end flex-1 pt-[70px] pb-32 px-margin-mobile md:pb-24 md:px-[54px]">
+        <div class="w-full md:max-w-[1000px]">
+          <!-- Eyebrow -->
+          <p class="mb-6 font-sans text-[12px] font-normal leading-[16px] tracking-[0.2em] text-white/90 uppercase">
+            Designing Spaces · Mumbai and Beyond
+          </p>
+
+          <!-- Headline -->
+          <h1 class="flex flex-col mb-12">
+            <span
+              class="font-serif text-[56px] font-normal leading-[1.1] tracking-tight text-white md:text-[80px] md:leading-[86px]">
+              Where your stories find a
+            </span>
+            <span
+              class="font-serif text-[80px] font-normal italic leading-[0.9] text-primary-fixed-dim -ml-2 md:text-[108px] md:leading-[0.88]">
+              home.
+            </span>
+          </h1>
+
+          <!-- Supporting Copy -->
+          <p class="font-sans text-[18px] font-normal leading-[28px] tracking-[0.01em] text-white/85 max-w-[450px]">
+            Every home holds a collection of stories, memories and moments. We bring them together, to create spaces
+            that feel deeply, unmistakably yours.
+          </p>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="absolute z-10 bottom-16 right-margin-mobile md:right-[52px]">
+        <a class="flex items-center justify-center w-16 h-16 transition-colors duration-300 border rounded-full border-white/60 hover:border-white group"
+          href="#philosophy">
+          <span
+            class="material-symbols-outlined text-[24px] font-light text-white transition-transform duration-300 group-hover:translate-y-1"
+            style="font-variation-settings: 'wght' 200;">
+            arrow_downward
+          </span>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Philosophy Section -->
+    <section id="philosophy" class="w-full bg-[#F4F0E6] px-6 md:px-[54px] pt-24 md:pt-[190px] pb-32 md:pb-[220px] min-h-screen md:min-h-[100vh] lg:min-h-[850px] flex flex-col md:flex-row">
+      
+      <!-- Left Column (Label & Line) -->
+      <div class="w-full md:w-[36%] flex flex-col shrink-0 mb-16 md:mb-0">
+        <p class="font-sans text-[12px] font-normal uppercase tracking-[0.18em] text-[#211E19]/55">
+          01 — OUR PHILOSOPHY
+        </p>
+        <div class="w-[110px] h-[1px] bg-[#A77A32] mt-6 md:mt-[50px]"></div>
+      </div>
+
+      <!-- Right Column (Main Content) -->
+      <div class="w-full md:w-[64%] flex flex-col md:-mt-2">
+        
+        <!-- Editorial Statement -->
+        <h2 class="font-serif text-[42px] md:text-[64px] lg:text-[80px] font-normal leading-[1.0] tracking-[-0.025em] text-[#211E19]">
+          A home is not a blank<br class="hidden md:block" />
+          canvas. It is a story, already<br class="hidden md:block" />
+          in progress.
+        </h2>
+        
+        <!-- Body Copy Columns -->
+        <div class="flex flex-col xl:flex-row gap-10 xl:gap-[65px] mt-12 md:mt-[70px]">
+          <!-- Column 1 -->
+          <div class="w-full xl:max-w-[450px]">
+            <p class="font-sans text-[17px] lg:text-[18px] font-normal leading-[1.65] text-[#2A2722]">
+              Kintsugi is the Japanese art of repairing what is broken
+              with gold—not disguising its history, but honouring it.
+              We bring the same sensitivity to every home.
+            </p>
+          </div>
+
+          <!-- Column 2 -->
+          <div class="w-full xl:max-w-[450px]">
+            <p class="font-sans text-[17px] lg:text-[18px] font-normal leading-[1.65] text-[#2A2722]">
+              We listen for what is absent: warmth, rhythm, a place to
+              gather. Then we add it back with intention, using honest
+              materials and details that feel inevitable.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const bgHero = document.getElementById('nav-bg-hero');
+      const bgLight = document.getElementById('nav-bg-light');
+      const logoWordmark = document.getElementById('logo-wordmark');
+      const logoSymbol = document.getElementById('logo-symbol');
+      const navLinks = document.querySelectorAll('.nav-link');
+      const ctaLink = document.getElementById('cta-link');
+      const philosophySection = document.getElementById('philosophy');
+      
+      if (!bgHero || !philosophySection) return;
+
+      let isLightState = false;
+
+      const updateNavbar = () => {
+        // Trigger exactly when the philosophy section top reaches the bottom of the navbar
+        const triggerPoint = philosophySection.offsetTop - 70;
+        
+        if (window.scrollY >= triggerPoint && !isLightState) {
+          isLightState = true;
+          
+          // Cross-fade backgrounds
+          bgHero.classList.replace('opacity-100', 'opacity-0');
+          bgLight.classList.replace('opacity-0', 'opacity-100');
+          
+          // Cross-fade logos
+          logoWordmark?.classList.replace('opacity-100', 'opacity-0');
+          logoSymbol?.classList.replace('opacity-0', 'opacity-100');
+          
+          // Update Links
+          navLinks.forEach(link => {
+            link.classList.remove('text-white/85', 'hover:text-white');
+            link.classList.add('text-[#211E19]/80', 'hover:text-[#211E19]');
+          });
+
+          // Update CTA
+          ctaLink.classList.remove('text-white/85', 'border-white/50', 'hover:border-white/90');
+          ctaLink.classList.add('text-[#211E19]/80', 'border-[#A77A32]', 'hover:border-[#A77A32]/70');
+          
+        } else if (window.scrollY < triggerPoint && isLightState) {
+          isLightState = false;
+          
+          // Cross-fade backgrounds
+          bgHero.classList.replace('opacity-0', 'opacity-100');
+          bgLight.classList.replace('opacity-100', 'opacity-0');
+          
+          // Cross-fade logos
+          logoWordmark?.classList.replace('opacity-0', 'opacity-100');
+          logoSymbol?.classList.replace('opacity-100', 'opacity-0');
+          
+          // Update Links
+          navLinks.forEach(link => {
+            link.classList.add('text-white/85', 'hover:text-white');
+            link.classList.remove('text-[#211E19]/80', 'hover:text-[#211E19]');
+          });
+
+          // Update CTA
+          ctaLink.classList.add('text-white/85', 'border-white/50', 'hover:border-white/90');
+          ctaLink.classList.remove('text-[#211E19]/80', 'border-[#A77A32]', 'hover:border-[#A77A32]/70');
+        }
+      };
+
+      window.addEventListener('scroll', () => {
+        window.requestAnimationFrame(updateNavbar);
+      }, { passive: true });
+      
+      // Initial check on load
+      updateNavbar();
+    });
+  </script>
+</body>
+
+</html>
