@@ -89,7 +89,7 @@
       <div class="flex items-center flex-1">
         <a class="relative block w-[125px] lg:w-[185px]" href="#">
           <!-- Hero Logo (Wordmark) -->
-          <img id="logo-wordmark" src="./images/logo_5@2x.png" alt="Kintsugi" class="block w-full h-auto object-contain transition-opacity duration-300 ease-in-out opacity-100" />
+          <img id="logo-wordmark" src="./images/logo-hero-new.png" alt="Kintsugi" class="block w-full h-auto object-contain transition-opacity duration-300 ease-in-out opacity-100" />
           <!-- Philosophy Logo (Symbol) -->
           <img id="logo-symbol" src="./images/logo@2x.png" alt="Kintsugi Symbol" class="absolute left-0 top-0 w-full h-auto object-contain transition-opacity duration-300 ease-in-out opacity-0" />
         </a>
@@ -220,6 +220,66 @@
       </div>
     </section>
 
+    <!-- Section 03 - The Kintsugi Approach -->
+    <section id="approach" class="relative w-full bg-[#D8CCBE] flex flex-col lg:flex-row lg:h-[100svh] lg:min-h-[760px]">
+      
+      <!-- Mobile Image (Hidden on Desktop) -->
+      <div class="w-full aspect-[4/3] lg:hidden">
+        <img src="./images/BIZ04636+b.jpg" alt="The Kintsugi Approach" class="w-full h-full object-cover object-center" />
+      </div>
+
+      <!-- Desktop Image Container -->
+      <div class="hidden lg:block relative lg:w-[44%]">
+        <div class="absolute top-0 left-0 w-full h-full">
+          <img src="./images/BIZ04636+b.jpg" alt="The Kintsugi Approach" class="w-full h-full object-cover object-[center_30%]" />
+        </div>
+      </div>
+
+      <!-- Content Container -->
+      <div class="w-full lg:w-[56%] flex flex-col justify-start px-[20px] py-[70px] lg:pt-[160px] lg:px-[100px]">
+        
+        <!-- Eyebrow -->
+        <p class="font-sans text-[10px] lg:text-[11px] font-normal uppercase tracking-[0.18em] text-[#211E19]/60 mb-6 lg:mb-[30px] leading-[1.2]">
+          THE KINTSUGI APPROACH
+        </p>
+
+        <!-- Quote -->
+        <h2 class="font-serif text-[clamp(38px,11vw,56px)] lg:text-[clamp(50px,3.9vw,64px)] font-normal leading-[1.05] lg:leading-[1.02] text-[#211E19] mb-10 lg:mb-[45px] max-w-[610px]">
+          “The beauty is not<br class="hidden lg:block"/>
+          in perfection, but in<br class="hidden lg:block"/>
+          the care taken to<br class="hidden lg:block"/>
+          make something<br class="hidden lg:block"/>
+          whole.”
+        </h2>
+
+        <!-- Divider -->
+        <div class="w-full max-w-[610px] h-[1px] bg-[#211E19]/10 mb-10 lg:mb-[30px]"></div>
+
+        <!-- Principles -->
+        <div class="flex flex-col gap-8 lg:gap-[30px] max-w-[610px]">
+          <div class="flex items-baseline">
+            <span class="w-[40px] lg:w-[50px] shrink-0 font-sans text-[12px] lg:text-[11px] text-[#B98A37] font-light tracking-widest">I</span>
+            <p class="font-sans text-[15px] lg:text-[15.5px] text-[#2A2722] font-normal leading-[1.6]">
+              We observe before we design.
+            </p>
+          </div>
+          <div class="flex items-baseline">
+            <span class="w-[40px] lg:w-[50px] shrink-0 font-sans text-[12px] lg:text-[11px] text-[#B98A37] font-light tracking-widest">II</span>
+            <p class="font-sans text-[15px] lg:text-[15.5px] text-[#2A2722] font-normal leading-[1.6]">
+              We preserve character, patina and memory.
+            </p>
+          </div>
+          <div class="flex items-baseline">
+            <span class="w-[40px] lg:w-[50px] shrink-0 font-sans text-[12px] lg:text-[11px] text-[#B98A37] font-light tracking-widest">III</span>
+            <p class="font-sans text-[15px] lg:text-[15.5px] text-[#2A2722] font-normal leading-[1.6]">
+              We add only what brings meaning.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
   <!-- Mobile Menu Overlay -->
@@ -263,6 +323,7 @@
       const navLinks = document.querySelectorAll('.nav-link');
       const ctaLink = document.getElementById('cta-link');
       const philosophySection = document.getElementById('philosophy');
+      const approachSection = document.getElementById('approach');
       const menuLines = document.querySelectorAll('.menu-line');
       const mobileMenuBtn = document.getElementById('mobile-menu-btn');
       const mobileMenuClose = document.getElementById('mobile-menu-close');
@@ -270,63 +331,66 @@
       
       if (!bgHero || !philosophySection) return;
 
-      let isLightState = false;
+      let currentNavState = -1; // 0: Hero, 1: Philosophy, 2: Approach
 
       const updateNavbar = () => {
-        // Trigger exactly when the philosophy section top reaches the bottom of the navbar
-        const triggerPoint = philosophySection.offsetTop - 70;
+        const philTrigger = philosophySection.offsetTop - 70;
+        const appTrigger = approachSection ? approachSection.offsetTop - 70 : Infinity;
         
-        if (window.scrollY >= triggerPoint && !isLightState) {
-          isLightState = true;
-          
-          // Cross-fade backgrounds
-          bgHero.classList.replace('opacity-100', 'opacity-0');
-          bgLight.classList.replace('opacity-0', 'opacity-100');
-          
-          // Cross-fade logos
-          logoWordmark?.classList.replace('opacity-100', 'opacity-0');
-          logoSymbol?.classList.replace('opacity-0', 'opacity-100');
-          
-          // Update Links
-          navLinks.forEach(link => {
-            link.classList.remove('text-white/85', 'hover:text-white');
-            link.classList.add('text-[#211E19]/80', 'hover:text-[#211E19]');
-          });
+        let newState = 0;
+        if (window.scrollY >= appTrigger) {
+          newState = 2;
+        } else if (window.scrollY >= philTrigger) {
+          newState = 1;
+        }
 
-          // Update CTA
-          ctaLink.classList.remove('text-white/85', 'border-white/50', 'hover:border-white/90');
-          ctaLink.classList.add('text-[#211E19]/80', 'border-[#A77A32]', 'hover:border-[#A77A32]/70');
+        if (currentNavState !== newState) {
+          currentNavState = newState;
           
-          // Update Mobile Menu Trigger
-          menuLines.forEach(line => {
-            line.classList.replace('bg-white', 'bg-[#211E19]');
-          });
-          
-        } else if (window.scrollY < triggerPoint && isLightState) {
-          isLightState = false;
-          
-          // Cross-fade backgrounds
-          bgHero.classList.replace('opacity-0', 'opacity-100');
-          bgLight.classList.replace('opacity-100', 'opacity-0');
-          
-          // Cross-fade logos
-          logoWordmark?.classList.replace('opacity-0', 'opacity-100');
-          logoSymbol?.classList.replace('opacity-100', 'opacity-0');
-          
-          // Update Links
-          navLinks.forEach(link => {
-            link.classList.add('text-white/85', 'hover:text-white');
-            link.classList.remove('text-[#211E19]/80', 'hover:text-[#211E19]');
-          });
-
-          // Update CTA
-          ctaLink.classList.add('text-white/85', 'border-white/50', 'hover:border-white/90');
-          ctaLink.classList.remove('text-[#211E19]/80', 'border-[#A77A32]', 'hover:border-[#A77A32]/70');
-
-          // Update Mobile Menu Trigger
-          menuLines.forEach(line => {
-            line.classList.replace('bg-[#211E19]', 'bg-white');
-          });
+          if (newState === 0) {
+            // Hero State
+            bgHero.classList.replace('opacity-0', 'opacity-100');
+            bgLight.classList.replace('opacity-100', 'opacity-0');
+            
+            logoWordmark?.classList.replace('opacity-0', 'opacity-100');
+            logoSymbol?.classList.replace('opacity-100', 'opacity-0');
+            
+            navLinks.forEach(link => {
+              link.classList.add('text-white/85', 'hover:text-white');
+              link.classList.remove('text-[#211E19]/80', 'hover:text-[#211E19]');
+            });
+            
+            ctaLink.classList.add('text-white/85', 'border-white/50', 'hover:border-white/90');
+            ctaLink.classList.remove('text-[#211E19]/80', 'border-[#A77A32]', 'hover:border-[#A77A32]/70');
+            
+            menuLines.forEach(line => {
+              line.classList.replace('bg-[#211E19]', 'bg-white');
+            });
+          } else {
+            // Philosophy (1) or Approach (2)
+            bgHero.classList.replace('opacity-100', 'opacity-0');
+            
+            if (newState === 1) {
+              bgLight.classList.replace('opacity-0', 'opacity-100');
+            } else {
+              bgLight.classList.replace('opacity-100', 'opacity-0');
+            }
+            
+            logoWordmark?.classList.replace('opacity-100', 'opacity-0');
+            logoSymbol?.classList.replace('opacity-0', 'opacity-100');
+            
+            navLinks.forEach(link => {
+              link.classList.remove('text-white/85', 'hover:text-white');
+              link.classList.add('text-[#211E19]/80', 'hover:text-[#211E19]');
+            });
+            
+            ctaLink.classList.remove('text-white/85', 'border-white/50', 'hover:border-white/90');
+            ctaLink.classList.add('text-[#211E19]/80', 'border-[#A77A32]', 'hover:border-[#A77A32]/70');
+            
+            menuLines.forEach(line => {
+              line.classList.replace('bg-white', 'bg-[#211E19]');
+            });
+          }
         }
       };
 
