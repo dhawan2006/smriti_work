@@ -280,6 +280,101 @@
       </div>
     </section>
 
+    <!-- Section 04 - Project Enquiry -->
+    <section id="enquiry" class="relative w-full bg-[#1F1F1C] px-[20px] md:px-[40px] lg:px-[9vw] pt-[80px] pb-[80px] lg:pt-[110px] lg:pb-[90px]">
+      <div class="w-full flex flex-col lg:flex-row translate-y-[12px] md:translate-y-[18px] lg:translate-y-[28px]">
+      
+      <!-- Left Column: Content -->
+      <div class="w-full lg:w-[42%] flex flex-col mb-16 lg:mb-0 lg:pr-[50px] xl:pr-[80px] border-b lg:border-b-0 lg:border-r border-[#F0ECE1]/10 pb-16 lg:pb-0">
+        
+        <!-- Eyebrow -->
+        <p class="font-sans text-[11px] lg:text-[12px] font-normal uppercase tracking-[0.2em] text-[#B98A37] mb-8 lg:mb-12">
+          A THOUGHTFUL BEGINNING
+        </p>
+
+        <!-- Headline -->
+        <h2 class="font-serif text-[clamp(48px,6vw,82px)] font-normal leading-[0.94] text-[#F0ECE1] mb-6 lg:mb-8 tracking-tight">
+          What is your home <span class="italic">waiting</span> for?
+        </h2>
+
+        <!-- Description -->
+        <p class="font-sans text-[15px] lg:text-[16px] text-[#F0ECE1]/90 font-normal leading-[1.65] max-w-[450px]">
+          Tell us where you live, how you live, and what does not yet feel quite right. We will begin there.
+        </p>
+
+      </div>
+
+      <!-- Right Column: Form -->
+      <div class="w-full lg:w-[58%] flex flex-col lg:pl-[60px] xl:pl-[90px]">
+        <form class="w-full flex flex-col gap-8 lg:gap-10" onsubmit="event.preventDefault();">
+          
+          <!-- Row 1: Name & Email -->
+          <div class="flex flex-col md:flex-row gap-8 lg:gap-10 w-full">
+            <div class="flex flex-col flex-1 relative group">
+              <label for="name" class="font-sans text-[10px] lg:text-[11px] font-medium uppercase tracking-[0.14em] text-[#F0ECE1] mb-2">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" class="w-full bg-transparent border-b border-[#F0ECE1]/45 hover:border-[#F0ECE1]/70 focus:border-[#B98A37] focus:outline-none transition-colors duration-300 h-[52px] lg:h-[60px] text-[#F0ECE1] placeholder:text-[#F0ECE1]/40 font-sans text-[15px] rounded-none shadow-none" required />
+            </div>
+            <div class="flex flex-col flex-1 relative group">
+              <label for="email" class="font-sans text-[10px] lg:text-[11px] font-medium uppercase tracking-[0.14em] text-[#F0ECE1] mb-2">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" class="w-full bg-transparent border-b border-[#F0ECE1]/45 hover:border-[#F0ECE1]/70 focus:border-[#B98A37] focus:outline-none transition-colors duration-300 h-[52px] lg:h-[60px] text-[#F0ECE1] placeholder:text-[#F0ECE1]/40 font-sans text-[15px] rounded-none shadow-none" required />
+            </div>
+          </div>
+
+          <!-- Row 2: Phone & Project Type -->
+          <div class="flex flex-col md:flex-row gap-8 lg:gap-10 w-full">
+            <div class="flex flex-col flex-1 relative group">
+              <label for="phone" class="font-sans text-[10px] lg:text-[11px] font-medium uppercase tracking-[0.14em] text-[#F0ECE1] mb-2">Phone, Optional</label>
+              <input type="tel" id="phone" name="phone" placeholder="Your number" autocomplete="tel" class="w-full bg-transparent border-b border-[#F0ECE1]/45 hover:border-[#F0ECE1]/70 focus:border-[#B98A37] focus:outline-none transition-colors duration-300 h-[52px] lg:h-[60px] text-[#F0ECE1] placeholder:text-[#F0ECE1]/40 font-sans text-[15px] rounded-none shadow-none" />
+            </div>
+            <div class="flex flex-col flex-1 relative group">
+              <label for="project_type" class="font-sans text-[10px] lg:text-[11px] font-medium uppercase tracking-[0.14em] text-[#F0ECE1] mb-2">Project Type</label>
+              <div class="relative w-full">
+                <select id="project_type" name="project_type" required class="appearance-none w-full bg-transparent border-b border-[#F0ECE1]/45 hover:border-[#F0ECE1]/70 focus:border-[#B98A37] focus:outline-none transition-colors duration-300 h-[52px] lg:h-[60px] text-[#F0ECE1] invalid:text-[#F0ECE1]/40 font-sans text-[15px] rounded-none shadow-none pr-8 cursor-pointer [&>option]:text-[#1F1F1C] [&>option]:bg-[#F0ECE1]">
+                  <option value="" disabled selected>Select a project</option>
+                  <option value="Full Home Interior">Full Home Interior</option>
+                  <option value="Residential Renovation">Residential Renovation</option>
+                  <option value="Individual Room">Individual Room</option>
+                  <option value="Interior Styling">Interior Styling</option>
+                  <option value="Consultation">Consultation</option>
+                  <option value="Other">Other</option>
+                </select>
+                <!-- Custom arrow -->
+                <div class="absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none opacity-60">
+                  <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L6 6L11 1" stroke="#F0ECE1" stroke-width="1.5" stroke-linecap="square"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 3: Location -->
+          <div class="flex flex-col w-full relative group">
+            <label for="location" class="font-sans text-[10px] lg:text-[11px] font-medium uppercase tracking-[0.14em] text-[#F0ECE1] mb-2">Project Location</label>
+            <input type="text" id="location" name="location" placeholder="City or area" class="w-full bg-transparent border-b border-[#F0ECE1]/45 hover:border-[#F0ECE1]/70 focus:border-[#B98A37] focus:outline-none transition-colors duration-300 h-[52px] lg:h-[60px] text-[#F0ECE1] placeholder:text-[#F0ECE1]/40 font-sans text-[15px] rounded-none shadow-none" required />
+          </div>
+
+          <!-- Row 4: Message -->
+          <div class="flex flex-col w-full relative group">
+            <label for="message" class="font-sans text-[10px] lg:text-[11px] font-medium uppercase tracking-[0.14em] text-[#F0ECE1] mb-2">Tell us about your home</label>
+            <textarea id="message" name="message" placeholder="Your routines, aspirations, memories—and what you hope to change" class="w-full bg-transparent border-b border-[#F0ECE1]/45 hover:border-[#F0ECE1]/70 focus:border-[#B98A37] focus:outline-none transition-colors duration-300 min-h-[85px] lg:min-h-[95px] py-4 text-[#F0ECE1] placeholder:text-[#F0ECE1]/40 font-sans text-[15px] resize-y rounded-none shadow-none scrollbar-hide" required></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="w-full pt-2 lg:pt-4">
+            <button type="submit" class="group flex items-center justify-between w-full md:w-[350px] h-[54px] lg:h-[58px] bg-[#B98A37] hover:bg-[#A67A2F] transition-colors duration-300 px-6 cursor-pointer rounded-none border-none">
+              <span class="font-sans text-[11px] lg:text-[12px] font-medium uppercase tracking-[0.14em] text-[#1F1F1C]">Request a Project Enquiry</span>
+              <svg class="transform transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 13L13 1M13 1H4M13 1V10" stroke="#1F1F1C" stroke-width="1.5" stroke-linecap="square"/>
+              </svg>
+            </button>
+          </div>
+
+        </form>
+      </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- Mobile Menu Overlay -->
@@ -324,6 +419,7 @@
       const ctaLink = document.getElementById('cta-link');
       const philosophySection = document.getElementById('philosophy');
       const approachSection = document.getElementById('approach');
+      const enquirySection = document.getElementById('enquiry');
       const menuLines = document.querySelectorAll('.menu-line');
       const mobileMenuBtn = document.getElementById('mobile-menu-btn');
       const mobileMenuClose = document.getElementById('mobile-menu-close');
@@ -331,14 +427,17 @@
       
       if (!bgHero || !philosophySection) return;
 
-      let currentNavState = -1; // 0: Hero, 1: Philosophy, 2: Approach
+      let currentNavState = -1; // 0: Hero/Enquiry, 1: Philosophy, 2: Approach
 
       const updateNavbar = () => {
         const philTrigger = philosophySection.offsetTop - 70;
         const appTrigger = approachSection ? approachSection.offsetTop - 70 : Infinity;
+        const enqTrigger = enquirySection ? enquirySection.offsetTop - 70 : Infinity;
         
         let newState = 0;
-        if (window.scrollY >= appTrigger) {
+        if (window.scrollY >= enqTrigger) {
+          newState = 0;
+        } else if (window.scrollY >= appTrigger) {
           newState = 2;
         } else if (window.scrollY >= philTrigger) {
           newState = 1;
