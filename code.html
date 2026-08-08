@@ -281,22 +281,26 @@
     </section>
 
     <!-- Section 03.5 - The Maker -->
-    <section id="maker" class="scroll-mt-[64px] lg:scroll-mt-[70px] w-full bg-[#F4F0E6] px-[20px] lg:px-[54px] pt-[40px] lg:pt-[32px] pb-[60px] lg:pb-[80px] min-h-[calc(100svh-64px)] lg:min-h-[calc(100svh-70px)] flex flex-col">
+    <section id="maker" class="scroll-mt-[120px] lg:scroll-mt-[-115px] w-full bg-[#F4F0E6] px-[20px] lg:px-[54px] pt-[40px] lg:pt-[200px] pb-[60px] lg:pb-[120px] min-h-[calc(100svh-64px)] lg:min-h-[calc(100svh-70px)] flex flex-col">
       
       <!-- Top Label -->
-      <p class="font-sans text-[10.5px] lg:text-[12px] font-normal uppercase tracking-[0.16em] lg:tracking-[0.18em] text-[#211E19]/55 mb-10 lg:mb-8">
+      <p class="font-sans text-[10.5px] lg:text-[12px] font-normal uppercase tracking-[0.16em] lg:tracking-[0.18em] text-[#211E19]/55 mb-10 lg:mb-16">
         02 — MEET THE ONE BEHIND KINTSUGI
       </p>
 
-      <!-- Two Columns (Editorial Centered Layout) -->
-      <div class="flex flex-col lg:flex-row w-full flex-1 gap-12 lg:gap-[6vw] xl:gap-[8vw] justify-center items-start">
+      <!-- Two Columns (Symmetrical 5-Column Grid Layout) -->
+      <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1.8fr)_auto_minmax(0,1fr)] w-full flex-1 items-start gap-y-12 lg:gap-y-0">
         
+        <!-- Left Spacer (Hidden on mobile) -->
+        <div class="hidden lg:block w-full"></div>
+
         <!-- Left Column: Image -->
-        <div class="w-full shrink-0 lg:w-[clamp(320px,28vw,410px)] flex flex-col items-start lg:mt-[16px]">
-          <div class="w-full aspect-[3/4] lg:aspect-[2/3] max-w-[340px] lg:max-w-none lg:max-h-[65vh] object-cover overflow-hidden">
-            <img src="./images/BIZ04694++b.jpg" alt="Smriti, the one behind Kintsugi" class="w-full h-full object-cover" />
-          </div>
+        <div class="w-full shrink-0 lg:w-auto flex flex-col items-start lg:mt-0">
+          <img src="./images/BIZ04694++b.jpg" alt="Smriti, the one behind Kintsugi" class="w-full max-w-[340px] lg:max-w-[500px] lg:w-auto h-auto lg:max-h-[74vh]" />
         </div>
+
+        <!-- Middle Spacer (Gap, Hidden on mobile) -->
+        <div class="hidden lg:block w-full"></div>
 
         <!-- Right Column: Text -->
         <div class="w-full shrink-0 lg:w-[clamp(480px,40vw,560px)] flex flex-col lg:mt-0">
@@ -324,6 +328,9 @@
           </div>
 
         </div>
+
+        <!-- Right Spacer (Hidden on mobile) -->
+        <div class="hidden lg:block w-full"></div>
 
       </div>
     </section>
