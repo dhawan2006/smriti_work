@@ -104,7 +104,7 @@
 
       <div class="hidden lg:flex items-center justify-end flex-1">
         <a id="cta-link" class="pb-1 font-sans text-[12px] font-normal leading-[16px] tracking-[0.15em] text-white/85 uppercase transition-colors duration-300 border-b border-white/50 hover:border-white/90"
-          href="#">Begin a Project</a>
+          href="#enquiry">Begin a Project</a>
       </div>
 
       <!-- Mobile Menu Trigger -->
@@ -281,7 +281,7 @@
     </section>
 
     <!-- Section 04 - Project Enquiry -->
-    <section id="enquiry" class="relative w-full bg-[#1F1F1C] px-[20px] md:px-[40px] lg:px-[9vw] pt-[80px] pb-[80px] lg:pt-[110px] lg:pb-[90px]">
+    <section id="enquiry" class="relative w-full bg-[#1F1F1C] px-[20px] md:px-[40px] lg:px-[9vw] pt-[80px] pb-[80px] lg:pt-[110px] lg:pb-[90px] flex flex-col justify-center" style="min-height: 100vh; min-height: 100dvh;">
       <div class="w-full flex flex-col lg:flex-row translate-y-[12px] md:translate-y-[18px] lg:translate-y-[28px]">
       
       <!-- Left Column: Content -->
@@ -306,7 +306,7 @@
 
       <!-- Right Column: Form -->
       <div class="w-full lg:w-[58%] flex flex-col lg:pl-[60px] xl:pl-[90px]">
-        <form class="w-full flex flex-col gap-8 lg:gap-10" onsubmit="event.preventDefault();">
+        <form id="project-enquiry-form" class="w-full flex flex-col gap-8 lg:gap-10">
           
           <!-- Row 1: Name & Email -->
           <div class="flex flex-col md:flex-row gap-8 lg:gap-10 w-full">
@@ -350,8 +350,8 @@
 
           <!-- Row 3: Location -->
           <div class="flex flex-col w-full relative group">
-            <label for="location" class="font-sans text-[10px] lg:text-[11px] font-medium uppercase tracking-[0.14em] text-[#F0ECE1] mb-2">Project Location</label>
-            <input type="text" id="location" name="location" placeholder="City or area" class="w-full bg-transparent border-b border-[#F0ECE1]/45 hover:border-[#F0ECE1]/70 focus:border-[#B98A37] focus:outline-none transition-colors duration-300 h-[52px] lg:h-[60px] text-[#F0ECE1] placeholder:text-[#F0ECE1]/40 font-sans text-[15px] rounded-none shadow-none" required />
+            <label for="project_location" class="font-sans text-[10px] lg:text-[11px] font-medium uppercase tracking-[0.14em] text-[#F0ECE1] mb-2">Project Location</label>
+            <input type="text" id="project_location" name="project_location" placeholder="City or area" class="w-full bg-transparent border-b border-[#F0ECE1]/45 hover:border-[#F0ECE1]/70 focus:border-[#B98A37] focus:outline-none transition-colors duration-300 h-[52px] lg:h-[60px] text-[#F0ECE1] placeholder:text-[#F0ECE1]/40 font-sans text-[15px] rounded-none shadow-none" required />
           </div>
 
           <!-- Row 4: Message -->
@@ -362,12 +362,13 @@
 
           <!-- Submit Button -->
           <div class="w-full pt-2 lg:pt-4">
-            <button type="submit" class="group flex items-center justify-between w-full md:w-[350px] h-[54px] lg:h-[58px] bg-[#B98A37] hover:bg-[#A67A2F] transition-colors duration-300 px-6 cursor-pointer rounded-none border-none">
-              <span class="font-sans text-[11px] lg:text-[12px] font-medium uppercase tracking-[0.14em] text-[#1F1F1C]">Request a Project Enquiry</span>
-              <svg class="transform transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <button id="enquiry-submit-btn" type="submit" class="group flex items-center justify-between w-full md:w-[350px] h-[54px] lg:h-[58px] bg-[#B98A37] hover:bg-[#A67A2F] transition-colors duration-300 px-6 cursor-pointer rounded-none border-none disabled:opacity-50 disabled:cursor-not-allowed">
+              <span id="enquiry-submit-text" class="font-sans text-[11px] lg:text-[12px] font-medium uppercase tracking-[0.14em] text-[#1F1F1C]">Request a Project Enquiry</span>
+              <svg id="enquiry-submit-icon" class="transform transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1 13L13 1M13 1H4M13 1V10" stroke="#1F1F1C" stroke-width="1.5" stroke-linecap="square"/>
               </svg>
             </button>
+            <p id="enquiry-status" class="hidden font-sans text-[14px] text-[#F0ECE1] mt-6" aria-live="polite"></p>
           </div>
 
         </form>
@@ -402,7 +403,7 @@
         <span class="font-sans text-[11px] font-normal tracking-[0.2em] text-[#211E19]/60 mr-8">02</span>
         <span class="font-serif text-[32px] text-[#211E19] uppercase tracking-tight">The Maker</span>
       </a>
-      <a href="#" class="flex items-baseline py-6 border-b border-[#211E19]/10 menu-link">
+      <a href="#enquiry" class="flex items-baseline py-6 border-b border-[#211E19]/10 menu-link">
         <span class="font-sans text-[11px] font-normal tracking-[0.2em] text-[#211E19]/60 mr-8">03</span>
         <span class="font-serif text-[32px] text-[#211E19] uppercase tracking-tight">Begin a Project</span>
       </a>
@@ -535,7 +536,58 @@
           link.addEventListener('click', closeMenu);
         });
       }
+
+      // EmailJS Logic
+      const enquiryForm = document.getElementById('project-enquiry-form');
+      const submitBtn = document.getElementById('enquiry-submit-btn');
+      const submitText = document.getElementById('enquiry-submit-text');
+      const statusMsg = document.getElementById('enquiry-status');
+
+      if (enquiryForm) {
+        enquiryForm.addEventListener('submit', function(event) {
+          event.preventDefault();
+          
+          if (!submitBtn || !submitText || !statusMsg) return;
+
+          // Update UI to sending state
+          submitBtn.disabled = true;
+          const originalText = submitText.innerText;
+          submitText.innerText = 'SENDING...';
+          statusMsg.classList.add('hidden');
+          
+          emailjs.sendForm('service_sraa47m', 'template_hjzp0lj', this)
+            .then(() => {
+              // Success
+              submitText.innerText = originalText;
+              submitBtn.disabled = false;
+              statusMsg.innerText = "Thank you. Your enquiry has been received. We'll be in touch soon.";
+              statusMsg.classList.remove('hidden', 'text-red-400');
+              statusMsg.classList.add('text-[#F0ECE1]');
+              enquiryForm.reset();
+            }, (error) => {
+              // Error
+              console.error("EMAILJS ERROR:", error);
+              console.error("EMAILJS ERROR TEXT:", error?.text);
+              console.error("EMAILJS ERROR STATUS:", error?.status);
+              submitText.innerText = originalText;
+              submitBtn.disabled = false;
+              statusMsg.innerText = "Something went wrong while sending your enquiry. Please try again.";
+              statusMsg.classList.remove('hidden', 'text-[#F0ECE1]');
+              statusMsg.classList.add('text-red-400');
+            });
+        });
+      }
     });
+  </script>
+
+  <!-- EmailJS Library -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function(){
+      emailjs.init({
+        publicKey: "Cc-WJXl0nK83O2_fH"
+      });
+    })();
   </script>
 </body>
 
