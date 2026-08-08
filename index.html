@@ -125,7 +125,7 @@
         aria-label="A living room featuring a wooden sofa with colorful cushions, a vibrant floral arrangement in a green vase on a wooden coffee table, and a large traditional Indian painting on the wall above the sofa."
         style="background-image: url('./images/hero.jpg');">
         <!-- Hero Overlays -->
-        <div class="absolute inset-0 bg-black/25"></div>
+        <div class="absolute inset-0 bg-black/30"></div>
         <div class="absolute inset-0 bg-gradient-to-r from-[#0a0805]/60 via-[#0a0805]/20 to-transparent"></div>
         <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40"></div>
         <!-- Mobile Specific localized text darkening -->
@@ -201,18 +201,14 @@
           <!-- Column 1 -->
           <div class="w-full lg:max-w-[450px]">
             <p class="font-sans text-[16px] lg:text-[18px] font-normal leading-[1.65] text-[#2A2722]">
-              Kintsugi is the Japanese art of repairing what is broken
-              with gold—not disguising its history, but honouring it.
-              We bring the same sensitivity to every home.
+              Every home holds pieces of a story—memories, objects, routines, relationships and the people who inhabit it. Our role is to understand those pieces, discover what is missing, and bring them together with intention.
             </p>
           </div>
 
           <!-- Column 2 -->
           <div class="w-full lg:max-w-[450px]">
             <p class="font-sans text-[16px] lg:text-[18px] font-normal leading-[1.65] text-[#2A2722]">
-              We listen for what is absent: warmth, rhythm, a place to
-              gather. Then we add it back with intention, using honest
-              materials and details that feel inevitable.
+              Whether we are transforming an existing home or creating one from scratch, we believe the most meaningful spaces are not designed around a particular style. They are shaped around the people who live in them. Because the most beautiful home is one that feels completely, unmistakably yours.
             </p>
           </div>
         </div>
@@ -258,19 +254,19 @@
         <!-- Principles -->
         <div class="flex flex-col gap-8 lg:gap-[30px] max-w-[610px]">
           <div class="flex items-baseline">
-            <span class="w-[40px] lg:w-[50px] shrink-0 font-sans text-[12px] lg:text-[11px] text-[#B98A37] font-light tracking-widest">I</span>
+            <span class="w-[40px] lg:w-[50px] shrink-0 font-sans text-[12px] lg:text-[11px] text-[#997026] font-medium tracking-widest">I</span>
             <p class="font-sans text-[15px] lg:text-[15.5px] text-[#2A2722] font-normal leading-[1.6]">
               We observe before we design.
             </p>
           </div>
           <div class="flex items-baseline">
-            <span class="w-[40px] lg:w-[50px] shrink-0 font-sans text-[12px] lg:text-[11px] text-[#B98A37] font-light tracking-widest">II</span>
+            <span class="w-[40px] lg:w-[50px] shrink-0 font-sans text-[12px] lg:text-[11px] text-[#997026] font-medium tracking-widest">II</span>
             <p class="font-sans text-[15px] lg:text-[15.5px] text-[#2A2722] font-normal leading-[1.6]">
               We preserve character, patina and memory.
             </p>
           </div>
           <div class="flex items-baseline">
-            <span class="w-[40px] lg:w-[50px] shrink-0 font-sans text-[12px] lg:text-[11px] text-[#B98A37] font-light tracking-widest">III</span>
+            <span class="w-[40px] lg:w-[50px] shrink-0 font-sans text-[12px] lg:text-[11px] text-[#997026] font-medium tracking-widest">III</span>
             <p class="font-sans text-[15px] lg:text-[15.5px] text-[#2A2722] font-normal leading-[1.6]">
               We add only what brings meaning.
             </p>
@@ -386,11 +382,9 @@
               <div class="relative w-full">
                 <select id="project_type" name="project_type" required class="appearance-none w-full bg-transparent border-b border-[#F0ECE1]/45 hover:border-[#F0ECE1]/70 focus:border-[#B98A37] focus:outline-none transition-colors duration-300 h-[52px] lg:h-[60px] text-[#F0ECE1] invalid:text-[#F0ECE1]/40 font-sans text-[15px] rounded-none shadow-none pr-8 cursor-pointer [&>option]:text-[#1F1F1C] [&>option]:bg-[#F0ECE1]">
                   <option value="" disabled selected>Select a project</option>
-                  <option value="Full Home Interior">Full Home Interior</option>
-                  <option value="Residential Renovation">Residential Renovation</option>
-                  <option value="Individual Room">Individual Room</option>
-                  <option value="Interior Styling">Interior Styling</option>
-                  <option value="Consultation">Consultation</option>
+                  <option value="Rental Refresh & Quick Makeovers">Rental Refresh & Quick Makeovers</option>
+                  <option value="Smart Storage Solutions for Rent-Ready Homes">Smart Storage Solutions for Rent-Ready Homes</option>
+                  <option value="Interior Design Consultation">Interior Design Consultation</option>
                   <option value="Other">Other</option>
                 </select>
                 <!-- Custom arrow -->
@@ -403,10 +397,31 @@
             </div>
           </div>
 
-          <!-- Row 3: Location -->
-          <div class="flex flex-col w-full relative group">
-            <label for="project_location" class="font-sans text-[10px] lg:text-[11px] font-medium uppercase tracking-[0.14em] text-[#F0ECE1] mb-2">Project Location</label>
-            <input type="text" id="project_location" name="project_location" placeholder="City or area" class="w-full bg-transparent border-b border-[#F0ECE1]/45 hover:border-[#F0ECE1]/70 focus:border-[#B98A37] focus:outline-none transition-colors duration-300 h-[52px] lg:h-[60px] text-[#F0ECE1] placeholder:text-[#F0ECE1]/40 font-sans text-[15px] rounded-none shadow-none" required />
+          <!-- Row 3: Location & Size -->
+          <div class="flex flex-col md:flex-row gap-8 lg:gap-10 w-full">
+            <div class="flex flex-col flex-1 relative group">
+              <label for="project_location" class="font-sans text-[10px] lg:text-[11px] font-medium uppercase tracking-[0.14em] text-[#F0ECE1] mb-2">Project Location</label>
+              <input type="text" id="project_location" name="project_location" placeholder="City or area" class="w-full bg-transparent border-b border-[#F0ECE1]/45 hover:border-[#F0ECE1]/70 focus:border-[#B98A37] focus:outline-none transition-colors duration-300 h-[52px] lg:h-[60px] text-[#F0ECE1] placeholder:text-[#F0ECE1]/40 font-sans text-[15px] rounded-none shadow-none" required />
+            </div>
+
+            <div class="flex flex-col flex-1 relative group">
+              <label for="project_size" class="font-sans text-[10px] lg:text-[11px] font-medium uppercase tracking-[0.14em] text-[#F0ECE1] mb-2">Size of Project</label>
+              <div class="relative w-full">
+                <select id="project_size" name="project_size" required class="appearance-none w-full bg-transparent border-b border-[#F0ECE1]/45 hover:border-[#F0ECE1]/70 focus:border-[#B98A37] focus:outline-none transition-colors duration-300 h-[52px] lg:h-[60px] text-[#F0ECE1] invalid:text-[#F0ECE1]/40 font-sans text-[15px] rounded-none shadow-none pr-8 cursor-pointer [&>option]:text-[#1F1F1C] [&>option]:bg-[#F0ECE1]">
+                  <option value="" disabled selected>Select size</option>
+                  <option value="Less than 800 sq ft- 1-2 BHK">Less than 800 sq ft- 1-2 BHK</option>
+                  <option value="800-1500 sq ft- 2-3 BHK">800-1500 sq ft- 2-3 BHK</option>
+                  <option value="1500-2000 sq ft- 3-4 BHK">1500-2000 sq ft- 3-4 BHK</option>
+                  <option value="2000 and above">2000 and above</option>
+                </select>
+                <!-- Custom arrow -->
+                <div class="absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none opacity-60">
+                  <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L6 6L11 1" stroke="#F0ECE1" stroke-width="1.5" stroke-linecap="square"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
           </div>
 
           <!-- Row 4: Message -->
@@ -430,6 +445,213 @@
       </div>
       </div>
     </section>
+
+    <!-- Section 03.75 - FAQ -->
+    <section id="faq" class="relative scroll-mt-[64px] lg:scroll-mt-[70px] w-full bg-[#F4F0E6] px-[20px] lg:px-[54px] pt-[80px] lg:pt-[220px] pb-[80px] lg:pb-[140px] flex flex-col lg:flex-row">
+      <!-- Left Column (Label & Line) -->
+      <div class="w-full lg:w-[32%] flex flex-col shrink-0 mb-12 lg:mb-0">
+        <p class="font-sans text-[10.5px] lg:text-[12px] font-normal uppercase tracking-[0.16em] lg:tracking-[0.18em] text-[#211E19]/55">
+          03 — FREQUENTLY ASKED QUESTIONS
+        </p>
+        <div class="w-[70px] lg:w-[110px] h-[1px] bg-[#A77A32] mt-6 lg:mt-[50px]"></div>
+      </div>
+
+      <!-- Right Column (Main Content) -->
+      <div class="w-full lg:w-[62%] lg:ml-auto flex flex-col lg:-mt-2">
+        <h2 class="font-serif text-[clamp(38px,6vw,60px)] lg:text-[60px] font-normal leading-[1.05] lg:leading-[1.0] max-w-[760px] tracking-[-0.025em] text-[#211E19] mb-8 lg:mb-[45px]">
+          Questions, thoughtfully answered.
+        </h2>
+
+        <!-- Accordion Container -->
+        <div class="flex flex-col w-full border-t border-[#211E19]/10">
+          
+          <!-- FAQ 1 -->
+          <div class="group border-b border-[#211E19]/10">
+            <button class="faq-button w-full flex items-center justify-between py-4 lg:py-5 text-left focus:outline-none" aria-expanded="false">
+              <h3 class="font-serif text-[20px] lg:text-[22px] font-normal leading-[1.4] text-[#211E19] pr-8">
+                How much will it cost to design my space?
+              </h3>
+              <span class="faq-icon font-sans text-[24px] font-light text-[#211E19] transition-transform duration-300 relative w-[18px] h-[18px] flex items-center justify-center shrink-0">
+                <span class="absolute w-full h-[1px] bg-[#211E19]"></span>
+                <span class="absolute h-full w-[1px] bg-[#211E19] transition-transform duration-300 faq-vertical-line"></span>
+              </span>
+            </button>
+            <div class="faq-answer grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-in-out opacity-0">
+              <div class="overflow-hidden">
+                <p class="font-sans text-[16px] lg:text-[18px] font-normal leading-[1.65] text-[#2A2722] pb-6 lg:pb-8 max-w-[580px]">
+                  Every project is unique. we offer tailored design solutions based on your space, needs, and vision. We’ll work together to arrive at a creative and cost-conscious plan that brings your space to life.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="group border-b border-[#211E19]/10">
+            <button class="faq-button w-full flex items-center justify-between py-4 lg:py-5 text-left focus:outline-none" aria-expanded="false">
+              <h3 class="font-serif text-[20px] lg:text-[22px] font-normal leading-[1.4] text-[#211E19] pr-8">
+                Do I need to have a clear vision before hiring you?
+              </h3>
+              <span class="faq-icon font-sans text-[24px] font-light text-[#211E19] transition-transform duration-300 relative w-[18px] h-[18px] flex items-center justify-center shrink-0">
+                <span class="absolute w-full h-[1px] bg-[#211E19]"></span>
+                <span class="absolute h-full w-[1px] bg-[#211E19] transition-transform duration-300 faq-vertical-line"></span>
+              </span>
+            </button>
+            <div class="faq-answer grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-in-out opacity-0">
+              <div class="overflow-hidden">
+                <p class="font-sans text-[16px] lg:text-[18px] font-normal leading-[1.65] text-[#2A2722] pb-6 lg:pb-8 max-w-[580px]">
+                  Not at all. Whether you have a detailed mood board or are just beginning to explore your style, I’ll guide you through the process and help shape a direction that feels right for you.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="group border-b border-[#211E19]/10">
+            <button class="faq-button w-full flex items-center justify-between py-4 lg:py-5 text-left focus:outline-none" aria-expanded="false">
+              <h3 class="font-serif text-[20px] lg:text-[22px] font-normal leading-[1.4] text-[#211E19] pr-8">
+                How long does a typical project take?
+              </h3>
+              <span class="faq-icon font-sans text-[24px] font-light text-[#211E19] transition-transform duration-300 relative w-[18px] h-[18px] flex items-center justify-center shrink-0">
+                <span class="absolute w-full h-[1px] bg-[#211E19]"></span>
+                <span class="absolute h-full w-[1px] bg-[#211E19] transition-transform duration-300 faq-vertical-line"></span>
+              </span>
+            </button>
+            <div class="faq-answer grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-in-out opacity-0">
+              <div class="overflow-hidden">
+                <p class="font-sans text-[16px] lg:text-[18px] font-normal leading-[1.65] text-[#2A2722] pb-6 lg:pb-8 max-w-[580px]">
+                  Timelines depend on the scope – a cosmetic refresh can take a few weeks, while a full renovation may span several months. We’ll set clear timelines from the outset and keep the process transparent throughout.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="group border-b border-[#211E19]/10">
+            <button class="faq-button w-full flex items-center justify-between py-4 lg:py-5 text-left focus:outline-none" aria-expanded="false">
+              <h3 class="font-serif text-[20px] lg:text-[22px] font-normal leading-[1.4] text-[#211E19] pr-8">
+                Will you work with what I already have?
+              </h3>
+              <span class="faq-icon font-sans text-[24px] font-light text-[#211E19] transition-transform duration-300 relative w-[18px] h-[18px] flex items-center justify-center shrink-0">
+                <span class="absolute w-full h-[1px] bg-[#211E19]"></span>
+                <span class="absolute h-full w-[1px] bg-[#211E19] transition-transform duration-300 faq-vertical-line"></span>
+              </span>
+            </button>
+            <div class="faq-answer grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-in-out opacity-0">
+              <div class="overflow-hidden">
+                <p class="font-sans text-[16px] lg:text-[18px] font-normal leading-[1.65] text-[#2A2722] pb-6 lg:pb-8 max-w-[580px]">
+                  Absolutely. Some of the most meaningful spaces are built around cherished, existing pieces. We love finding ways to integrate those into the new design to create a space that feels both fresh and familiar.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="group border-b border-[#211E19]/10">
+            <button class="faq-button w-full flex items-center justify-between py-4 lg:py-5 text-left focus:outline-none" aria-expanded="false">
+              <h3 class="font-serif text-[20px] lg:text-[22px] font-normal leading-[1.4] text-[#211E19] pr-8">
+                Do I need to be present at the work site throughout?
+              </h3>
+              <span class="faq-icon font-sans text-[24px] font-light text-[#211E19] transition-transform duration-300 relative w-[18px] h-[18px] flex items-center justify-center shrink-0">
+                <span class="absolute w-full h-[1px] bg-[#211E19]"></span>
+                <span class="absolute h-full w-[1px] bg-[#211E19] transition-transform duration-300 faq-vertical-line"></span>
+              </span>
+            </button>
+            <div class="faq-answer grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-in-out opacity-0">
+              <div class="overflow-hidden">
+                <p class="font-sans text-[16px] lg:text-[18px] font-normal leading-[1.65] text-[#2A2722] pb-6 lg:pb-8 max-w-[580px]">
+                  Not necessarily. We manage all on-site coordination, so whether you're present or away, your project will continue to move forward smoothly. Regular updates will keep you involved and informed.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 6 -->
+          <div class="group border-b border-[#211E19]/10">
+            <button class="faq-button w-full flex items-center justify-between py-4 lg:py-5 text-left focus:outline-none" aria-expanded="false">
+              <h3 class="font-serif text-[20px] lg:text-[22px] font-normal leading-[1.4] text-[#211E19] pr-8">
+                Is hiring an interior designer only meant for luxury homes?
+              </h3>
+              <span class="faq-icon font-sans text-[24px] font-light text-[#211E19] transition-transform duration-300 relative w-[18px] h-[18px] flex items-center justify-center shrink-0">
+                <span class="absolute w-full h-[1px] bg-[#211E19]"></span>
+                <span class="absolute h-full w-[1px] bg-[#211E19] transition-transform duration-300 faq-vertical-line"></span>
+              </span>
+            </button>
+            <div class="faq-answer grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-in-out opacity-0">
+              <div class="overflow-hidden">
+                <p class="font-sans text-[16px] lg:text-[18px] font-normal leading-[1.65] text-[#2A2722] pb-6 lg:pb-8 max-w-[580px]">
+                  Definitely not. Good design is not about extravagance – it’s about creating harmony, comfort, and beauty in any space. We work with a wide range of budgets and scales to deliver thoughtful and intentional design.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 7 -->
+          <div class="group border-b border-[#211E19]/10">
+            <button class="faq-button w-full flex items-center justify-between py-4 lg:py-5 text-left focus:outline-none" aria-expanded="false">
+              <h3 class="font-serif text-[20px] lg:text-[22px] font-normal leading-[1.4] text-[#211E19] pr-8">
+                Will my space end up looking like a showroom?
+              </h3>
+              <span class="faq-icon font-sans text-[24px] font-light text-[#211E19] transition-transform duration-300 relative w-[18px] h-[18px] flex items-center justify-center shrink-0">
+                <span class="absolute w-full h-[1px] bg-[#211E19]"></span>
+                <span class="absolute h-full w-[1px] bg-[#211E19] transition-transform duration-300 faq-vertical-line"></span>
+              </span>
+            </button>
+            <div class="faq-answer grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-in-out opacity-0">
+              <div class="overflow-hidden">
+                <p class="font-sans text-[16px] lg:text-[18px] font-normal leading-[1.65] text-[#2A2722] pb-6 lg:pb-8 max-w-[580px]">
+                  Never. Your home should be a reflection of you – layered, warm, and personal. We aim to design spaces that feel lived-in, not staged, and that evolve beautifully with time.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 8 -->
+          <div class="group border-b border-[#211E19]/10">
+            <button class="faq-button w-full flex items-center justify-between py-4 lg:py-5 text-left focus:outline-none" aria-expanded="false">
+              <h3 class="font-serif text-[20px] lg:text-[22px] font-normal leading-[1.4] text-[#211E19] pr-8">
+                Can you manage the entire renovation process?
+              </h3>
+              <span class="faq-icon font-sans text-[24px] font-light text-[#211E19] transition-transform duration-300 relative w-[18px] h-[18px] flex items-center justify-center shrink-0">
+                <span class="absolute w-full h-[1px] bg-[#211E19]"></span>
+                <span class="absolute h-full w-[1px] bg-[#211E19] transition-transform duration-300 faq-vertical-line"></span>
+              </span>
+            </button>
+            <div class="faq-answer grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-in-out opacity-0">
+              <div class="overflow-hidden">
+                <p class="font-sans text-[16px] lg:text-[18px] font-normal leading-[1.65] text-[#2A2722] pb-6 lg:pb-8 max-w-[580px]">
+                  Yes. we provide end-to-end services – from space planning and materials selection to coordinating with contractors, vendors, and artisans. You can trust us to handle the complexities while staying aligned with your vision.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Closing Message -->
+        <div class="mt-[60px] lg:mt-[90px] flex flex-col items-start max-w-[580px]">
+          <p class="font-sans text-[18px] lg:text-[20px] font-normal leading-[1.65] text-[#2A2722] mb-4">
+            Let’s Create Something Beautiful, Together.
+          </p>
+          <p class="font-serif text-[22px] lg:text-[26px] font-normal italic leading-[1.5] text-[#211E19]">
+            A space that tells your story, in its most graceful form.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Instagram Icon -->
+      <div class="absolute bottom-8 lg:bottom-12 left-0 right-0 flex justify-center w-full pointer-events-none">
+        <a href="https://www.instagram.com/CLIENT_USERNAME_HERE/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-[#211E19] hover:opacity-60 transition-opacity duration-300 pointer-events-auto">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="square" stroke-linejoin="miter">
+            <rect x="2" y="2" width="20" height="20" rx="4" ry="4"></rect>
+            <circle cx="12" cy="12" r="4"></circle>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle>
+          </svg>
+        </a>
+      </div>
+
+    </section>
+
 
   </main>
 
@@ -458,8 +680,12 @@
         <span class="font-sans text-[11px] font-normal tracking-[0.2em] text-[#211E19]/60 mr-8">02</span>
         <span class="font-serif text-[32px] text-[#211E19] uppercase tracking-tight">The Maker</span>
       </a>
-      <a href="#enquiry" class="flex items-baseline py-6 border-b border-[#211E19]/10 menu-link">
+      <a href="#faq" class="flex items-baseline py-6 border-b border-[#211E19]/10 menu-link">
         <span class="font-sans text-[11px] font-normal tracking-[0.2em] text-[#211E19]/60 mr-8">03</span>
+        <span class="font-serif text-[32px] text-[#211E19] uppercase tracking-tight">FAQ</span>
+      </a>
+      <a href="#enquiry" class="flex items-baseline py-6 border-b border-[#211E19]/10 menu-link">
+        <span class="font-sans text-[11px] font-normal tracking-[0.2em] text-[#211E19]/60 mr-8">04</span>
         <span class="font-serif text-[32px] text-[#211E19] uppercase tracking-tight">Begin a Project</span>
       </a>
     </nav>
@@ -477,6 +703,7 @@
       const approachSection = document.getElementById('approach');
       const makerSection = document.getElementById('maker');
       const enquirySection = document.getElementById('enquiry');
+      const faqSection = document.getElementById('faq');
       const menuLines = document.querySelectorAll('.menu-line');
       const mobileMenuBtn = document.getElementById('mobile-menu-btn');
       const mobileMenuClose = document.getElementById('mobile-menu-close');
@@ -484,16 +711,19 @@
       
       if (!bgHero || !philosophySection) return;
 
-      let currentNavState = -1; // 0: Hero/Enquiry, 1: Philosophy/Maker, 2: Approach
+      let currentNavState = -1; // 0: Hero/Enquiry, 1: Philosophy/Maker, 2: Approach, 3: FAQ
 
       const updateNavbar = () => {
         const philTrigger = philosophySection.offsetTop - 70;
         const appTrigger = approachSection ? approachSection.offsetTop - 70 : Infinity;
         const makerTrigger = makerSection ? makerSection.offsetTop - 70 : Infinity;
         const enqTrigger = enquirySection ? enquirySection.offsetTop - 70 : Infinity;
+        const faqTrigger = faqSection ? faqSection.offsetTop - 70 : Infinity;
         
         let newState = 0;
-        if (window.scrollY >= enqTrigger) {
+        if (window.scrollY >= faqTrigger) {
+          newState = 3;
+        } else if (window.scrollY >= enqTrigger) {
           newState = 0;
         } else if (window.scrollY >= makerTrigger) {
           newState = 1;
@@ -592,9 +822,46 @@
       const mobileLinks = mobileMenu?.querySelectorAll('.menu-link');
       if (mobileLinks) {
         mobileLinks.forEach(link => {
-          link.addEventListener('click', closeMenu);
+          link.addEventListener('click', () => {
+            closeMenu();
+            if (history.replaceState) {
+              history.replaceState(null, null, ' ');
+            }
+          });
         });
       }
+
+      // FAQ Accordion Logic
+      const faqButtons = document.querySelectorAll('.faq-button');
+      faqButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const isExpanded = button.getAttribute('aria-expanded') === 'true';
+          const answer = button.nextElementSibling;
+          const verticalLine = button.querySelector('.faq-vertical-line');
+          
+          // Close all other accordions
+          faqButtons.forEach(otherButton => {
+            if (otherButton !== button) {
+              otherButton.setAttribute('aria-expanded', 'false');
+              otherButton.nextElementSibling.classList.remove('grid-rows-[1fr]', 'opacity-100');
+              otherButton.nextElementSibling.classList.add('grid-rows-[0fr]', 'opacity-0');
+              otherButton.querySelector('.faq-vertical-line').classList.remove('rotate-90');
+            }
+          });
+
+          // Toggle current accordion
+          button.setAttribute('aria-expanded', !isExpanded);
+          if (!isExpanded) {
+            answer.classList.remove('grid-rows-[0fr]', 'opacity-0');
+            answer.classList.add('grid-rows-[1fr]', 'opacity-100');
+            verticalLine.classList.add('rotate-90');
+          } else {
+            answer.classList.remove('grid-rows-[1fr]', 'opacity-100');
+            answer.classList.add('grid-rows-[0fr]', 'opacity-0');
+            verticalLine.classList.remove('rotate-90');
+          }
+        });
+      });
 
       // EmailJS Logic
       const enquiryForm = document.getElementById('project-enquiry-form');
